@@ -28,10 +28,64 @@ console.disableYellowBox = true;
 
 ---
 
+### Git
+
+VSCode git
+
+```
+git config --global user.email "you@example.com"
+git config --global user.name "your name"
+git init
+```
+
+Github 연동
+
+```
+git remote add orgin <github 주소>
+```
+
+---
+
 ## Splash Screen
 
-- <https://dev-yakuza.github.io/ko/react-native/react-native-splash-screen/>
+splash 이미지 생성 (최소 3000 X 3000 px)
+
+```
+yarn add -D @bam.tech/react-native-make
+npx react-native set-splash --path ./src/assets/choi.png
+```
+
+splash 처리
+
+```
+yarn add react-native-splash-screen
+```
+
+app.js
+
+```
+import SplashScreen from 'react-native-splash-screen'
+
+const App = () => {
+  useEffect(() => { // Login 정보 (회원가입 유무, 자동 로그인, 회원 프로파일 etc..)
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 5000);
+  }, []);
+
+  return (
+    ~~~
+  )
+}
+
+export default App;
+```
+
+[참조]
+
+- SplashScreen 이미지 자동 생성 : <https://dev-yakuza.github.io/ko/react-native/react-native-splash-screen/>
 - <https://github.com/crazycodeboy/react-native-splash-screen>
+- SplashScreen 적용 : <https://kentakang.com/161>
 - <https://aboutreact.com/animated-splash-screen/>
 
 ---

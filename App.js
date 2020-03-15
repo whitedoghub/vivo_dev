@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import SplashScreen from 'react-native-splash-screen';
 
-import IntroScreen from './src/screens/split/IntroScreen';
+import IntroScreen from './src/screens/splash/IntroScreen';
 import LoginScreen from './src/screens/login/LoginScreen';
 import BottomTabs from './src/screens/bottomtabs';
 
 const Stack = createStackNavigator();
 
 const App = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 5000);
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Intro" headerMode="none">
