@@ -46,6 +46,18 @@ git remote add orgin <github 주소>
 
 ---
 
+### Android Debug Key
+
+openssl 설치 : https://bit.ly/2TU1eA7
+
+debug key 생성
+
+```
+keytool -exportcert -alias androiddebugkey -keystore ~~project\android\app\debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64
+```
+
+---
+
 ## Splash Screen
 
 splash 이미지 생성 (최소 3000 X 3000 px)
@@ -87,6 +99,30 @@ export default App;
 - <https://github.com/crazycodeboy/react-native-splash-screen>
 - SplashScreen 적용 : <https://kentakang.com/161>
 - <https://aboutreact.com/animated-splash-screen/>
+
+---
+
+### Social Login (Kakao)
+
+라이브러리 설치
+
+```
+yarn add @react-native-seoul/kakao-login
+yarn add @react-native-community/async-storage
+```
+
+버튼 컴포넌트 라이브러리 설치
+
+```
+yarn add apsl-react-native-button
+```
+
+[참고]
+
+- @react-native-seoul/kakao-login : <https://github.com/react-native-seoul/react-native-kakao-login>
+- Kakao Developers : <https://developers.kakao.com/docs/android/getting-started>
+- Access Token, Refresh Token : <https://tansfil.tistory.com/59>
+- react-native-community/async-storage : <https://github.com/react-native-community/async-storage>
 
 ---
 
